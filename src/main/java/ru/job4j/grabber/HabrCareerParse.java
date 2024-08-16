@@ -28,8 +28,16 @@ public class HabrCareerParse {
                 Element dateElement = row.select(".vacancy-card__date").first();
                 String datetime = dateElement.child(0).attr("datetime");
                 String link = String.format("%s%s", SOURCE_LINK, linkElement.attr("href"));
-                System.out.printf(" %s %s%n %s", vacancyName, link, datetime);
+                String description = retrieveDescription(link);
+                System.out.printf(" %s %s%n %s %s", vacancyName, link, datetime, description);
             }
         }
+    }
+
+    private static String retrieveDescription(String link) throws IOException {
+        Connection connection = Jsoup.connect(link);
+        Document document = connection.get();
+        Element desc = document.select(".basic-section--appearance-vacancy-description").first();
+        return desc != null ? desc.text() : "Описание не найдено";
     }
 }
