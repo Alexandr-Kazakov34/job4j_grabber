@@ -1,5 +1,7 @@
 package ru.job4j.grabber;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
@@ -16,6 +18,14 @@ class Post {
         this.link = link;
         this.description = description;
         this.created = created;
+    }
+
+    public Post(ResultSet resultSet) throws SQLException {
+        this.id = resultSet.getInt(1);
+        this.title = resultSet.getString(2);
+        this.link = resultSet.getString(3);
+        this.description = resultSet.getString(4);
+        this.created = resultSet.getTimestamp(5).toLocalDateTime();
     }
 
     public int getId() {

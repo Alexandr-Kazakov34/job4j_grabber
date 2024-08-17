@@ -38,20 +38,20 @@ public class PsqlStore implements Store {
         }
     }
 
+    private static Post createPost(ResultSet resultSet) throws SQLException {
+        return new Post(resultSet);
+    }
+
     @Override
     public List<Post> getAll() {
         List<Post> rsl = new ArrayList<>();
         try (PreparedStatement statement = connection.prepareStatement("select * from post;")) {
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
-                rsl.add(new Post(resultSet.getInt(1),
-                        resultSet.getString(2),
-                        resultSet.getString(3),
-                        resultSet.getString(4),
-                        resultSet.getTimestamp(5).toLocalDateTime()));
+                rsl.add(createPost(resultSet));
             }
         } catch (SQLException e) {
-           e.printStackTrace();
+            e.printStackTrace();
         }
         return rsl;
     }
