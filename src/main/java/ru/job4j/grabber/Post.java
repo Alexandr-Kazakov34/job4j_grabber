@@ -4,7 +4,6 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 class Post {
-    private static int idCounter = 1;
     private int id;
     private String title;
     private String link;
@@ -12,7 +11,7 @@ class Post {
     private LocalDateTime created;
 
     public Post(int id, String title, String link, String description, LocalDateTime created) {
-        this.id = idCounter++;
+        this.id = id;
         this.title = title;
         this.link = link;
         this.description = description;
