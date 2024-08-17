@@ -24,12 +24,12 @@ public class HabrCareerParse implements Parse {
         this.dateTimeParser = dateTimeParser;
     }
 
-    public static void main(String[] args) throws IOException {
+/*    public static void main(String[] args) throws IOException {
         HabrCareerParse habrCareerParse = new HabrCareerParse(parse -> LocalDateTime.now());
         String startLink = String.format("%s%s%s", SOURCE_LINK, PREFIX, SUFFIX);
         List<Post> posts = habrCareerParse.list(startLink);
         posts.forEach(System.out::println);
-    }
+    }*/
 
     private static String retrieveDescription(String link) throws IOException {
         Connection connection = Jsoup.connect(link);

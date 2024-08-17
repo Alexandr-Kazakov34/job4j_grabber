@@ -69,7 +69,7 @@ public class PsqlStore implements Store {
         }
     }
 
-    public static void main(String[] args) throws Exception {
+   /* public static void main(String[] args) throws Exception {
         Post post = new Post(1, "test", "Some description",
                 "https://career.habr.com/companies/holdingt1", LocalDateTime.now());
         Post post2 = new Post(2, "test", "Some description2",
@@ -93,5 +93,5 @@ public class PsqlStore implements Store {
         System.out.println(psqlStore.findById(1));
         System.out.println(psqlStore.findById(4));
         psqlStore.close();
-    }
+    }*/
 }
