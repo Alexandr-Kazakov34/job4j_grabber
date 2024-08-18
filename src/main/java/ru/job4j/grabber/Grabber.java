@@ -5,6 +5,9 @@ import org.quartz.impl.StdSchedulerFactory;
 import ru.job4j.grabber.utils.HabrCareerDateTimeParser;
 
 import java.io.*;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.nio.charset.Charset;
 import java.util.List;
 import java.util.Properties;
 
@@ -53,8 +56,6 @@ public class Grabber implements Grab {
                 List<Post> list = parse.list("https://career.habr.com/vacancies?page=&q=Java%20developer&type=all");
                 for (Post post : list) {
                     store.save(post);
-                    System.out.println("Saved post: " + post);
-                    System.out.println("Number of posts parsed: " + list.size());
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -62,17 +63,45 @@ public class Grabber implements Grab {
         }
     }
 
-    public static void main(String[] args) throws Exception {
+    public void web(Store store) {
+        new Thread(() -> {
+            try (ServerSocket server = new ServerSocket(Integer.parseInt(cfg().getProperty("port")))) {
+                while (!server.isClosed()) {
+                    Socket socket = server.accept();
+                    try (OutputStream out = socket.getOutputStream()) {
+                        out.write("HTTP/1.1 200 OK\r\n\r\n".getBytes());
+                        for (Post post : store.getAll()) {
+                            String output = String.format("ID: %s%nTitle: %s%nLink: %s%nDescription: %s%nCreated: %s%n%n",
+                                    post.getId(), post.getTitle(), post.getDescription(), post.getLink(), post.getCreated());
+                            out.write(output.getBytes(Charset.forName("Windows-1251")));
+                        }
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }).start();
+    }
+
+    public static Properties cfg() {
         var config = new Properties();
-        try (InputStream input = Grabber.class.getClassLoader()
-                .getResourceAsStream("rabbit.properties")) {
+        try (InputStream input = Grabber.class.getClassLoader().getResourceAsStream("rabbit.properties")) {
             config.load(input);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+        return config;
+    }
+
+    public static void main(String[] args) throws Exception {
+        Properties config = cfg();
         Scheduler scheduler = StdSchedulerFactory.getDefaultScheduler();
         scheduler.start();
         var parse = new HabrCareerParse(new HabrCareerDateTimeParser());
         var store = new PsqlStore(config);
         var time = Integer.parseInt(config.getProperty("time"));
-        new Grabber(parse, store, scheduler, time).init();
+        Grabber grab = new Grabber(parse, store, scheduler, time);
+        grab.init();
+        grab.web(store);
     }
 }
