@@ -58,8 +58,16 @@ public class PsqlStore implements Store {
 
     @Override
     public Post findById(int id) {
-        List<Post> all = getAll();
-        return all.stream().filter(post -> post.getId() == id).findFirst().orElse(null);
+        try (PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM post WHERE id = ?")) {
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                return createPost(resultSet);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     @Override
@@ -69,7 +77,7 @@ public class PsqlStore implements Store {
         }
     }
 
-   /* public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
         Post post = new Post(1, "test", "Some description",
                 "https://career.habr.com/companies/holdingt1", LocalDateTime.now());
         Post post2 = new Post(2, "test", "Some description2",
@@ -93,5 +101,5 @@ public class PsqlStore implements Store {
         System.out.println(psqlStore.findById(1));
         System.out.println(psqlStore.findById(4));
         psqlStore.close();
-    }*/
+    }
 }
