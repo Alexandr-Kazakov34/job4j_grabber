@@ -1,55 +1,45 @@
-[0.009s][info][gc] Using G1
-[4.900s][info][gc] GC(0) Pause Young (Normal) (G1 Evacuation Pause) 5M->2M(12M) 3.712ms
-[4.927s][info][gc] GC(1) Pause Young (Normal) (G1 Evacuation Pause) 4M->2M(12M) 2.151ms
-[4.980s][info][gc] GC(2) Pause Young (Normal) (G1 Evacuation Pause) 4M->3M(12M) 1.316ms
-[5.029s][info][gc] GC(3) Pause Young (Normal) (G1 Evacuation Pause) 6M->3M(12M) 2.223ms
-[5.054s][info][gc] GC(4) Pause Young (Normal) (G1 Evacuation Pause) 6M->3M(12M) 1.328ms
-[5.148s][info][gc] GC(5) Pause Young (Normal) (G1 Evacuation Pause) 6M->3M(12M) 0.728ms
-[5.210s][info][gc] GC(6) Pause Young (Normal) (G1 Evacuation Pause) 6M->4M(12M) 1.103ms
-[5.345s][info][gc] GC(7) Pause Young (Normal) (G1 Evacuation Pause) 8M->4M(12M) 2.172ms
-[16.531s][info][gc] GC(8) Pause Young (Normal) (G1 Evacuation Pause) 9M->6M(12M) 2.199ms
-[17.473s][info][gc] GC(9) Pause Young (Concurrent Start) (G1 Humongous Allocation) 6M->6M(12M) 1.400ms
-[17.473s][info][gc] GC(10) Concurrent Mark Cycle
-[17.487s][info][gc] GC(10) Pause Remark 8M->8M(12M) 6.572ms
-[17.491s][info][gc] GC(11) Pause Young (Normal) (G1 Evacuation Pause) 9M->7M(12M) 0.969ms
-[17.492s][info][gc] GC(10) Pause Cleanup 7M->7M(12M) 0.027ms
-[17.492s][info][gc] GC(10) Concurrent Mark Cycle 18.708ms
-[17.496s][info][gc] GC(12) Pause Young (Prepare Mixed) (G1 Evacuation Pause) 9M->7M(12M) 1.413ms
-[17.500s][info][gc] GC(13) Pause Young (Mixed) (G1 Evacuation Pause) 9M->6M(12M) 2.326ms
-[17.504s][info][gc] GC(14) Pause Young (Concurrent Start) (G1 Evacuation Pause) 8M->7M(12M) 1.353ms
-[17.504s][info][gc] GC(15) Concurrent Mark Cycle
-[17.507s][info][gc] GC(16) Pause Young (Normal) (G1 Evacuation Pause) 9M->7M(12M) 1.002ms
-[17.510s][info][gc] GC(17) Pause Young (Normal) (G1 Evacuation Pause) 8M->7M(12M) 0.800ms
-[17.515s][info][gc] GC(15) Pause Remark 8M->8M(12M) 3.197ms
-[17.517s][info][gc] GC(18) Pause Young (Normal) (G1 Evacuation Pause) 9M->7M(12M) 0.751ms
-[17.520s][info][gc] GC(19) Pause Young (Normal) (G1 Evacuation Pause) 9M->7M(12M) 0.834ms
-[17.520s][info][gc] GC(15) Pause Cleanup 7M->7M(12M) 0.101ms
-[17.520s][info][gc] GC(15) Concurrent Mark Cycle 16.325ms
-[17.522s][info][gc] GC(20) Pause Young (Prepare Mixed) (G1 Evacuation Pause) 8M->7M(12M) 0.744ms
-[17.524s][info][gc] GC(21) Pause Young (Mixed) (G1 Evacuation Pause) 8M->7M(12M) 1.583ms
-[17.526s][info][gc] GC(22) Pause Young (Concurrent Start) (G1 Evacuation Pause) 8M->7M(12M) 0.825ms
-[17.526s][info][gc] GC(23) Concurrent Mark Cycle
-[17.528s][info][gc] GC(24) Pause Young (Normal) (G1 Evacuation Pause) 8M->7M(12M) 0.632ms
-[17.530s][info][gc] GC(25) Pause Young (Normal) (G1 Evacuation Pause) 8M->7M(12M) 0.678ms
-[17.532s][info][gc] GC(26) Pause Young (Normal) (G1 Evacuation Pause) 8M->7M(12M) 0.630ms
-[17.533s][info][gc] GC(27) Pause Young (Normal) (G1 Evacuation Pause) 8M->7M(12M) 0.454ms
-[17.534s][info][gc] GC(28) Pause Young (Normal) (G1 Evacuation Pause) 8M->7M(12M) 0.318ms
-[17.538s][info][gc] GC(23) Pause Remark 8M->8M(12M) 2.122ms
-[17.538s][info][gc] GC(29) Pause Young (Normal) (G1 Evacuation Pause) 8M->7M(12M) 0.503ms
-[17.541s][info][gc] GC(23) Pause Cleanup 9M->9M(12M) 0.029ms
-[17.541s][info][gc] GC(23) Concurrent Mark Cycle 14.886ms
-[17.548s][info][gc] GC(30) Pause Young (Prepare Mixed) (G1 Evacuation Pause) 9M->6M(12M) 1.260ms
-[34.669s][info][gc] GC(31) Pause Young (Mixed) (G1 Evacuation Pause) 10M->6M(12M) 1.766ms
-[61.836s][info][gc] GC(32) Pause Young (Concurrent Start) (G1 Evacuation Pause) 9M->7M(12M) 0.954ms
-[61.836s][info][gc] GC(33) Concurrent Mark Cycle
-[61.845s][info][gc] GC(33) Pause Remark 7M->7M(12M) 2.533ms
-[61.848s][info][gc] GC(33) Pause Cleanup 7M->7M(12M) 0.027ms
-[61.848s][info][gc] GC(33) Concurrent Mark Cycle 11.979ms
-[77.959s][info][gc] GC(34) Pause Young (Prepare Mixed) (G1 Evacuation Pause) 9M->7M(12M) 1.057ms
-[98.075s][info][gc] GC(35) Pause Young (Mixed) (G1 Evacuation Pause) 9M->6M(12M) 2.005ms
-[118.186s][info][gc] GC(36) Pause Young (Concurrent Start) (G1 Evacuation Pause) 8M->6M(12M) 1.193ms
-[118.186s][info][gc] GC(37) Concurrent Mark Cycle
-[118.195s][info][gc] GC(37) Pause Remark 6M->6M(12M) 3.024ms
-[118.198s][info][gc] GC(37) Pause Cleanup 6M->6M(12M) 0.097ms
-[118.198s][info][gc] GC(37) Concurrent Mark Cycle 12.148ms
-[135.333s][info][gc] GC(38) Pause Young (Prepare Mixed) (G1 Evacuation Pause) 8M->5M(12M) 1.304ms
+[0.014s][info][gc] Using The Z Garbage Collector
+[0.180s][info][gc] GC(0) Garbage Collection (Warmup) 6M(25%)->6M(25%)
+[0.268s][info][gc] GC(1) Garbage Collection (Warmup) 6M(25%)->4M(17%)
+[4.582s][info][gc] GC(2) Garbage Collection (Warmup) 12M(50%)->8M(33%)
+[4.697s][info][gc] GC(3) Garbage Collection (Allocation Rate) 18M(75%)->8M(33%)
+[4.788s][info][gc] GC(4) Garbage Collection (Allocation Rate) 8M(33%)->8M(33%)
+[4.874s][info][gc] GC(5) Garbage Collection (Allocation Rate) 14M(58%)->8M(33%)
+[4.986s][info][gc] GC(6) Garbage Collection (Allocation Rate) 10M(42%)->10M(42%)
+[5.076s][info][gc] GC(7) Garbage Collection (Allocation Rate) 12M(50%)->10M(42%)
+[5.182s][info][gc] GC(8) Garbage Collection (Allocation Rate) 10M(42%)->8M(33%)
+[5.274s][info][gc] GC(9) Garbage Collection (Allocation Rate) 10M(42%)->8M(33%)
+[5.374s][info][gc] GC(10) Garbage Collection (Allocation Rate) 8M(33%)->8M(33%)
+[5.473s][info][gc] GC(11) Garbage Collection (Allocation Rate) 8M(33%)->8M(33%)
+[6.177s][info][gc] GC(12) Garbage Collection (Allocation Rate) 10M(42%)->10M(42%)
+[6.278s][info][gc] GC(13) Garbage Collection (Allocation Rate) 10M(42%)->8M(33%)
+[14.176s][info][gc] GC(14) Garbage Collection (Proactive) 12M(50%)->10M(42%)
+[22.473s][info][gc] Allocation Stall (main) 15.325ms
+[22.473s][info][gc] Allocation Stall (Common-Cleaner) 0.824ms
+[22.474s][info][gc] GC(15) Garbage Collection (Allocation Stall) 24M(100%)->14M(58%)
+[22.496s][info][gc] Allocation Stall (main) 11.865ms
+[22.497s][info][gc] GC(16) Garbage Collection (Allocation Stall) 24M(100%)->16M(67%)
+[22.617s][info][gc] GC(17) Garbage Collection (Allocation Rate) 24M(100%)->8M(33%)
+[22.703s][info][gc] GC(18) Garbage Collection (Allocation Rate) 8M(33%)->8M(33%)
+[22.780s][info][gc] GC(19) Garbage Collection (Allocation Rate) 8M(33%)->8M(33%)
+[22.890s][info][gc] GC(20) Garbage Collection (Allocation Rate) 8M(33%)->8M(33%)
+[22.994s][info][gc] GC(21) Garbage Collection (Allocation Rate) 8M(33%)->8M(33%)
+[23.092s][info][gc] GC(22) Garbage Collection (Allocation Rate) 8M(33%)->8M(33%)
+[23.201s][info][gc] GC(23) Garbage Collection (Allocation Rate) 8M(33%)->8M(33%)
+[23.288s][info][gc] GC(24) Garbage Collection (Allocation Rate) 10M(42%)->10M(42%)
+[23.376s][info][gc] GC(25) Garbage Collection (Allocation Rate) 10M(42%)->8M(33%)
+[23.694s][info][gc] GC(26) Garbage Collection (Allocation Rate) 8M(33%)->8M(33%)
+[23.800s][info][gc] GC(27) Garbage Collection (Allocation Rate) 8M(33%)->8M(33%)
+[23.895s][info][gc] GC(28) Garbage Collection (Allocation Rate) 8M(33%)->8M(33%)
+[23.989s][info][gc] GC(29) Garbage Collection (Allocation Rate) 8M(33%)->8M(33%)
+[24.100s][info][gc] GC(30) Garbage Collection (Allocation Rate) 8M(33%)->8M(33%)
+[24.172s][info][gc] GC(31) Garbage Collection (Allocation Rate) 8M(33%)->8M(33%)
+[24.273s][info][gc] GC(32) Garbage Collection (Allocation Rate) 10M(42%)->8M(33%)
+[26.272s][info][gc] GC(33) Garbage Collection (Proactive) 12M(50%)->12M(50%)
+[35.373s][info][gc] GC(34) Garbage Collection (Proactive) 16M(67%)->14M(58%)
+[64.675s][info][gc] GC(35) Garbage Collection (Proactive) 18M(75%)->10M(42%)
+[78.774s][info][gc] GC(36) Garbage Collection (Proactive) 14M(58%)->10M(42%)
+[91.874s][info][gc] GC(37) Garbage Collection (Proactive) 14M(58%)->10M(42%)
+[106.975s][info][gc] GC(38) Garbage Collection (Proactive) 14M(58%)->10M(42%)
+[123.074s][info][gc] GC(39) Garbage Collection (Proactive) 14M(58%)->10M(42%)
+[137.084s][info][gc] GC(40) Garbage Collection (Proactive) 14M(58%)->10M(42%)
