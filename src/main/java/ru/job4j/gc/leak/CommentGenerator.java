@@ -6,10 +6,6 @@ import java.util.List;
 import java.util.Random;
 
 public class CommentGenerator implements Generate {
-
-    public static final String PATH_PHRASES = "src/main/java/ru/job4j/gc/leak/files/phrases.txt";
-
-    public static final String SEPARATOR = System.lineSeparator();
     private static List<Comment> comments = new ArrayList<>();
     public static final Integer COUNT = 50;
     private static List<String> phrases;
@@ -24,7 +20,7 @@ public class CommentGenerator implements Generate {
 
     private void read() {
         try {
-            phrases = read(PATH_PHRASES);
+            phrases = read("src/main/java/ru/job4j/gc/leak/files/phrases.txt");
         } catch (IOException e) {
             throw new IllegalArgumentException(e);
         }
@@ -37,10 +33,11 @@ public class CommentGenerator implements Generate {
     @Override
     public void generate() {
         comments.clear();
+        String separator = System.lineSeparator();
         for (int i = 0; i < COUNT; i++) {
             String comment = String.format("%s%s%s%s%s",
-                    phrases.get(random.nextInt(phrases.size())), SEPARATOR,
-                    phrases.get(random.nextInt(phrases.size())), SEPARATOR,
+                    phrases.get(random.nextInt(phrases.size())), separator,
+                    phrases.get(random.nextInt(phrases.size())), separator,
                     phrases.get(random.nextInt(phrases.size())));
             comments.add(new Comment(comment,
                     userGenerator.randomUser()));
